@@ -48,8 +48,8 @@ export default {
     dropdown: null,
   }),
   methods: {
-    logout() {
-      console.log('logout');
+    async logout() {
+      await this.$store.dispatch('logout')
       this.$router.push('/login?message=logout')
     }
   },
@@ -72,17 +72,3 @@ export default {
 
 <style>
 </style>
-
-//  this.interval = setInterval(() => {
-//       this.date = new Date()
-//     }, 1000)
-//     this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-//       constrainWidth: false
-//     })
-    
-//     beforeDestroy() {
-//       clearInterval(this.interval)
-//       if (this.dropdown && this.dropdown.destroy) {
-//         this.dropdown.destroy()
-//       }
-//     }
